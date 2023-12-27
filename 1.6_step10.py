@@ -7,7 +7,6 @@ try:
     browser = webdriver.Chrome()
     browser.get(link)
 
-    # Ваш код, который заполняет обязательные поля
     labels = browser.find_elements(By.TAG_NAME, "label")
     inputs = browser.find_elements(By.TAG_NAME, "input")
 	
@@ -15,12 +14,8 @@ try:
         if label.text[-1] == '*':
             element.send_keys('Обязательное поле')
 
-    # Отправляем заполненную форму
     button = browser.find_element(By.CSS_SELECTOR, "button.btn")
     button.click()
-
-    # Проверяем, что смогли зарегистрироваться
-    # ждем загрузки страницы
     time.sleep(1)
 
     # находим элемент, содержащий текст
@@ -33,9 +28,7 @@ try:
     assert "Congratulations! You have successfully registered!" == welcome_text
 
 finally:
-    # ожидание чтобы визуально оценить результаты прохождения скрипта
     time.sleep(10)
-    # закрываем браузер после всех манипуляций
     browser.quit()
 	
 	
