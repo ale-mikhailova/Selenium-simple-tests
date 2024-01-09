@@ -4,7 +4,7 @@ import time
 
 try: 
     link = "http://suninjuly.github.io/registration2.html"
-    browser = webdriver.Chrome()
+    browser = webdriver.Firefox()
     browser.get(link)
 
 
